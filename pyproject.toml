@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["mumu"]
+
+[tool.setuptools.package-data]
+mumu = ["py.typed"]
+
+[project]
+name = "mumu-python-api"
+version = "1.0.0"
+authors = [
+    {name = "wlkjyy", email = "wlkjyy@vip.qq.com"},
+]
+description = "A Python wrapper for controlling Mumu Android emulators through MuMuManager.exe"
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.7"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Microsoft :: Windows",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8", 
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: System :: Emulators",
+    "Topic :: Software Development :: Testing",
+]
+keywords = ["android", "emulator", "mumu", "automation", "testing", "adb"]
+dependencies = [
+    "opencv-python>=4.0.0",
+    "numpy>=1.24.0,<2.0.0",
+    "adbutils>=1.2.15",
+]
+
+[project.optional-dependencies]
+gui = ["opencv-python>=4.0.0"]
+screen = ["scrcpy-client>=0.1.0"]
+dev = ["pytest>=6.0", "black>=22.0", "flake8>=4.0"]
+
+[project.urls]
+Homepage = "https://github.com/wlkjyy/mumu-python-api"
+"Bug Reports" = "https://github.com/wlkjyy/mumu-python-api/issues"
+"Source" = "https://github.com/wlkjyy/mumu-python-api"
+"Documentation" = "https://github.com/wlkjyy/mumu-python-api/blob/master/README.md"
