@@ -24,7 +24,7 @@ with open(os.path.join(this_directory, "requirements.txt"), encoding="utf-8") as
                 requirements.append(line)
 
 setup(
-    name="mumu-python-api",
+    name="mumu-emulator-api",
     version="1.0.0",
     author="wlkjyy",
     author_email="wlkjyy@vip.qq.com",

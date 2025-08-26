@@ -9,7 +9,7 @@ packages = ["mumu"]
 mumu = ["py.typed"]
 
 [project]
-name = "mumu-python-api"
+name = "mumu-emulator-api"
 version = "1.0.0"
 authors = [
     {name = "wlkjyy", email = "wlkjyy@vip.qq.com"},
@@ -47,7 +47,7 @@ screen = ["scrcpy-client>=0.1.0"]
 dev = ["pytest>=6.0", "black>=22.0", "flake8>=4.0"]
 
 [project.urls]
-Homepage = "https://github.com/wlkjyy/mumu-python-api"
-"Bug Reports" = "https://github.com/wlkjyy/mumu-python-api/issues"
-"Source" = "https://github.com/wlkjyy/mumu-python-api"
-"Documentation" = "https://github.com/wlkjyy/mumu-python-api/blob/master/README.md"
+Homepage = "https://github.com/wlkjyy/mumu-emulator-api"
+"Bug Reports" = "https://github.com/wlkjyy/mumu-emulator-api/issues"
+"Source" = "https://github.com/wlkjyy/mumu-emulator-api"
+"Documentation" = "https://github.com/wlkjyy/mumu-emulator-api/blob/master/README.md"
