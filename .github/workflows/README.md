@@ -12,7 +12,7 @@ This directory contains GitHub Actions workflows for automated testing, building
 - Manual dispatch
 
 **Jobs:**
-- **test**: Runs tests across Python 3.7-3.12
+- **test**: Runs tests across Python 3.8-3.12
   - Lints code with flake8
   - Tests package imports
   - Runs basic tests (continues on error due to MuMuManager dependency)
@@ -77,7 +77,7 @@ Add these secrets to your GitHub repository:
 
 ## Workflow Features
 
-- **Multi-version testing**: Tests on Python 3.7-3.12
+- **Multi-version testing**: Tests on Python 3.8-3.12
 - **Build validation**: Checks package integrity with twine
 - **Staged publishing**: TestPyPI first, then PyPI
 - **Artifact storage**: Saves build artifacts between jobs
