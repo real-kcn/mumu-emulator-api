@@ -81,8 +81,27 @@ jobs:
         pip install dist/*.whl
         python -c "from mumu import Mumu, MacAddress, IMEI; print('Import test passed')"
 
-  publish-pypi:
+  publish-testpypi:
     needs: [build, test-install]
+    runs-on: ubuntu-20.04
+    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && contains(github.ref, 'refs/tags/'))
+
+    steps:
+    - name: Download build artifacts
+      uses: actions/download-artifact@v4
+      with:
+        name: dist
+        path: dist/
+
+    - name: Publish to TestPyPI
+      uses: pypa/gh-action-pypi-publish@release/v1
+      with:
+        password: ${{ secrets.TEST_PYPI_API_TOKEN }}
+        repository-url: https://test.pypi.org/legacy/
+        skip-existing: true
+
+  publish-pypi:
+    needs: [build, test-install, publish-testpypi]
     runs-on: ubuntu-20.04
     if: github.event_name == 'release' && github.event.action == 'published'
     
