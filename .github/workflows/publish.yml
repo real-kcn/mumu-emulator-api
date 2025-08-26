@@ -82,7 +82,7 @@ jobs:
         python -c "from mumu import Mumu, MacAddress, IMEI; print('Import test passed')"
 
   publish-pypi:
-    needs: [build, test-install, publish-testpypi]
+    needs: [build, test-install]
     runs-on: ubuntu-20.04
     if: github.event_name == 'release' && github.event.action == 'published'
     
