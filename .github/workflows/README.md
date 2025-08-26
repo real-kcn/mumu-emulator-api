@@ -12,10 +12,11 @@ This directory contains GitHub Actions workflows for automated testing, building
 - Manual dispatch
 
 **Jobs:**
-- **test**: Runs tests across Python 3.8-3.12
+- **test**: Runs tests across Python 3.7-3.14
   - Lints code with flake8
   - Tests package imports
   - Runs basic tests (continues on error due to MuMuManager dependency)
+  - Uses Ubuntu 20.04 for Python 3.7-3.12 and Ubuntu 24.04 for Python 3.13-3.14
   
 - **build-test**: Tests package building
   - Builds source and wheel distributions
@@ -32,6 +33,8 @@ This directory contains GitHub Actions workflows for automated testing, building
 **Jobs:**
 1. **build**: Creates distribution packages
 2. **test-install**: Tests installation across Python versions
+   - Uses Ubuntu 20.04 for Python 3.7-3.12
+   - Uses Ubuntu 24.04 for Python 3.13-3.14
 3. **publish-testpypi**: Publishes to TestPyPI (on tags or manual)
 4. **publish-pypi**: Publishes to PyPI (on releases only)
 
@@ -77,7 +80,7 @@ Add these secrets to your GitHub repository:
 
 ## Workflow Features
 
-- **Multi-version testing**: Tests on Python 3.8-3.12
+- **Multi-version testing**: Tests on Python 3.7-3.14 across Ubuntu 20.04 and 24.04
 - **Build validation**: Checks package integrity with twine
 - **Staged publishing**: TestPyPI first, then PyPI
 - **Artifact storage**: Saves build artifacts between jobs
